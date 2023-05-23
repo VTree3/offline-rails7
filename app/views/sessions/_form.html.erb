@@ -1,0 +1,29 @@
+<%= form_for(:session, url: login_path, method: :post) do |form| %>
+
+ <% if @user && @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: 'form-control w-50 mx-auto text-center'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: 'form-control w-50 mx-auto text-center'  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Log in", class: 'btn btn-primary mt-5'%>
+  </div>
+<% end %>

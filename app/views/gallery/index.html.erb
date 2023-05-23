@@ -1,0 +1,21 @@
+<h1>Gallery</h1>
+<div class="row justify-content-center">
+  <% @images.each do |image| %>
+    <div class="col-md-4">
+      <div class="card p-3 shadow mb-5">
+        <%= image_tag image.image, class: 'card-img-top img-fluid rounded', style: 'width: 100%; max-width: 600px;' %>
+        <div class="card-body bg-white">
+          <p>
+          <td><%= link_to 'Show', image%></td>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= paginate @images, theme: 'bootstrap-5',
+                   pagination_class: "pagination-sm flex-wrap justify-content-center",
+                   nav_class: "d-inline-block" %>
+
+</div>
+

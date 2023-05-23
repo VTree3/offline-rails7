@@ -1,0 +1,32 @@
+<%= form_with(model: image) do |form| %>
+<h5>
+  <%= form.label :title %> <%= form.text_field :title, class: 'form-control w-50
+  mx-auto text-center' %>
+</h5>
+<h5>
+  <%= form.label :description %> <%= form.text_area :description, class:
+  'form-control w-50 mx-auto text-center' %>
+</h5>
+<h5><%= form.label :image %></h5>
+<p>
+  <%= form.file_field :image, accept: 'image/png,image/gif, image/jpeg,
+  image/webp', class: 'mx-auto form-control w-50 text-center' %>
+</p>
+
+<% if image.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(image.errors.count, "error") %> prohibited this image from
+    being saved:
+  </h2>
+
+  <ul>
+    <% image.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="actions"><%= form.submit %></div>
+<% end %>

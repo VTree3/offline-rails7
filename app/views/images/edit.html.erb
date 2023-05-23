@@ -1,0 +1,6 @@
+<h1>Editing Image</h1>
+<%= image_tag @image.image, style: "width: 300px; height: 300px", class: "pb-2"%>
+<%= render 'form', image: @image %>
+
+<%= link_to 'Show', @image %> |
+<%= link_to 'Back', images_path %>

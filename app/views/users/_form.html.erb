@@ -1,0 +1,36 @@
+<%= form_with(model: user) do |form| %>
+<div class="field text-center justify-content-center">
+  <% if user.errors.any? %>
+    <div id="error_explanation" class = "mx-auto">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:
+  'form-control w-50 mx-auto text-center' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, class:
+  'form-control w-50 mx-auto text-center' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, class:
+  'form-control w-50 mx-auto text-center' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
