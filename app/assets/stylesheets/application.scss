@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+
+
+ .main-container { 
+	max-width: 1080px;
+	padding: 50px !important;
+	background-color: aliceblue;
+	margin: 0 auto !important; 
+	float: none !important; 
+}
+
+//home
+
+.rainbow-text-animated {
+    background: linear-gradient(to right, red, yellow, blue, orange, green, purple);
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-animation 1s ease-in infinite;
+    background-size: 700% 100%;
+    margin-top: 10 px;
+}
+
+
+.img-holder img {
+    position:absolute;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+    margin-left: -185px;
+}
+.img-holder img.nijika2:hover {
+    opacity:0;
+
+  }
+
+.img-holder:hover {
+    animation: tilt-shaking 0.13s infinite;
+
+}
+
+
+@keyframes rainbow-animation {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 50% 0;
+    }
+
+    100%{
+        background-position: 100% 0;
+    }
+}
+
+
+
+@keyframes tilt-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(2deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-5px, 5px) rotate(-2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+
+  
