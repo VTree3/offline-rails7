@@ -32,9 +32,7 @@
           <a class="dropdown-item" href="<%= users_path %>">
             Master Users
           </a>
-          <a class="dropdown-item" href="<%= logout_path%>" data-method="delete">
-            Log out
-          </a>
+            <%= link_to 'Log Out', logout_path, data: {turbo_method: :delete}, class: 'dropdown-item' %>
           <% else %>
           <a class="dropdown-item" href="<%= login_path%>">
             Log in

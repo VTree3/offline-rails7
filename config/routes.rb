@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   resources :gallery, only: [:index]
+  get "/service_worker.js" => "service_worker#service_worker"
+  get "/manifest.json" => "service_worker#manifest"
+  get "/offline.html" => "service_worker#offline"
+
 end
