@@ -1,5 +1,7 @@
+const CACHE_VERSION = 'v1';
+
 function onInstall(event) {
-  console.log("[Serviceworker]", "Installing!", event);
+  console.log("[Serviceworker]", "Updating!!", event);
 }
 
 function onActivate(event) {

@@ -7,5 +7,5 @@ if (navigator.serviceWorker) {
         } else {
           window.alert("This browser does not support background sync.")
         }
-      }).then(() => console.log("[Companion]", "Service worker registered!"));
+      }).then(() => console.log("[Companion]", "Service worker updated!"));
   }

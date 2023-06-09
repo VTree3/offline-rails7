@@ -86,3 +86,5 @@ gem "kaminari"
 gem "bootstrap5-kaminari-views"
 
 gem "activestorage"
+
+gem "capistrano", "~> 3.17"

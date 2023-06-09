@@ -68,6 +68,8 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
+    airbrussh (1.4.1)
+      sshkit (>= 1.6.1, != 1.7.0)
     autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
     bcrypt (3.1.18)
@@ -82,6 +84,11 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.4)
+    capistrano (3.17.3)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
     capybara (3.39.1)
       addressable
       matrix
@@ -152,8 +159,11 @@ GEM
       net-protocol
     net-protocol (0.2.1)
       timeout
+    net-scp (4.0.0)
+      net-ssh (>= 2.6.5, < 8.0.0)
     net-smtp (0.3.3)
       net-protocol
+    net-ssh (7.1.0)
     nio4r (2.5.9)
     nokogiri (1.15.1-x86_64-linux)
       racc (~> 1.4)
@@ -217,6 +227,9 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-x86_64-linux)
+    sshkit (1.21.4)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.2)
@@ -254,6 +267,7 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.2)
   bootstrap5-kaminari-views
+  capistrano (~> 3.17)
   capybara
   debug
   font-awesome-sass
